@@ -4,7 +4,8 @@
 }
 
 html {
-  font-family: "Spectral", serif;
+  font-family: "Quattrocento", serif;
+  /* font-family: "Alice", serif; */
   scroll-behavior: smooth;
 }
 
@@ -37,7 +38,7 @@ header {
   justify-self: center;
   margin-top: 50px;
   gap: 60px;
-  width: 95%;
+  width: 110%;
   height: 100px;
   z-index: 1000;
   margin-left: 7px;
@@ -86,12 +87,27 @@ header a:hover {
   }
   header {
     justify-content: flex-start;
+    width: 110%;
+  }
+  #hamburger {
+    display: flex !important;
+  }
+  #telluridelogo {
+    margin-left: 50px;
   }
 }
 
 #telluridelogo {
   width: 200px;
   height: auto;
+}
+
+#hamburger {
+  position: absolute;
+  display: none;
+  align-self: center;
+  right: 50px;
+  opacity: 80%;
 }
 
 .main-section-container {
@@ -142,6 +158,7 @@ section {
   width: 100%;
   min-height: 600px;
   height: 600px;
+  font-family: "Alice", serif;
 }
 
 #paper-texture {
@@ -233,7 +250,7 @@ section h1 {
   align-items: center;
   position: relative;
   min-height: 850px;
-  height: auto;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -243,31 +260,91 @@ section h1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
   min-width: 325px;
   width: 600px;
   height: 90%;
   margin: 0 10px;
   z-index: 2;
-  border: 2px solid black;
-  box-shadow: 0px 4px 12px black;
+  box-shadow: 0px 6px 12px black;
+}
+
+.select-nav {
+  position: absolute;
+  display: flex;
+  width: 200px;
+  height: 30px;
+  top: -30px;
+}
+
+.select-nav button {
+  width: 100px;
+  height: 30px;
+  border: none;
+  background-image: url(../images/paper-texture.jpg);
+  top: -30px;
+  cursor: pointer;
+}
+
+#buffet-select {
+  font-family: "Quattrocento", serif;
+  font-weight: 600;
+  border-radius: 5px 5px 0 0;
+}
+
+#carte-select {
+  font-family: "Quattrocento", serif;
+  font-weight: 600;
+  border-radius: 5px 5px 0 0;
+}
+
+.apply-shadow {
+  box-shadow: inset 4px -2px 6px rgba(0, 0, 0, 0.304);
+  filter: brightness(90%);
+}
+
+.apply-shadow-inverse {
+  box-shadow: inset -4px -2px 6px rgba(0, 0, 0, 0.304);
+  filter: brightness(90%);
+}
+
+.allergies-text {
+  position: absolute;
+  font-size: 12px;
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+  color: black;
+}
+
+#carte-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hide-container {
+  display: none !important;
 }
 
 #white-paper-texture {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 2;
+  z-index: 3;
 }
 
 .menu-section-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 999;
+  margin-top: 20px;
 }
 
 .menu-section-text h1 {
   color: black;
+  margin: 10px 0;
+  font-size: 42px;
 }
 
 .menu-nav {
@@ -288,8 +365,10 @@ section h1 {
 
 #menu-container hr {
   margin-top: 20px;
+  margin-bottom: 10px;
   width: 50%;
   justify-self: center;
+  align-self: center;
 }
 
 .menu-items-container {
@@ -351,7 +430,47 @@ section h1 {
   margin-top: 30px;
 }
 
-@media (max-width: 485px) {
+.menu-section-text.buffet {
+  margin-top: 20px;
+}
+
+.buffet-info-text {
+  display: flex;
+  gap: 10px;
+}
+
+.buffet-price {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.buffet-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu-item.special {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+}
+
+.buffet-menu-items {
+  margin: 5px 0;
+  max-width: 45%;
+}
+
+.buffet-menu-items h3 {
+  margin-left: 40px;
+}
+
+.buffet-menu-items li {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+@media (max-width: 493px) {
   .menu-item h3 {
     font-size: 16px;
   }
@@ -360,19 +479,141 @@ section h1 {
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 415px) {
   .menu-item h3 {
     font-size: 14px;
   }
+
+  .buffet-menu-items h3 {
+    font-size: 14px;
+  }
+
+  .menu-item.special p {
+    font-size: 10px;
+  }
+
+  .buffet-menu-items li {
+    font-size: 12px;
+  }
+
   .menu-item p {
     font-size: 12px;
     max-width: 70%;
   }
+
   .menu-section-text h1 {
     font-size: 36px;
     margin-bottom: 10px;
   }
+
   .menu-nav p {
     font-size: 12px;
   }
+}
+
+#contact-section {
+  position: relative;
+  min-height: 800px;
+  align-items: center;
+  font-family: "Quattrocento", serif;
+}
+
+#mauntains-img {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(10%);
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  left: 0;
+  border: 1px solid rgba(63, 63, 63, 0.575);
+  border-radius: 12px;
+  min-width: 300px;
+  width: 800px;
+  height: 500px;
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  padding: 20px;
+}
+
+.contact-container h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 300px;
+  width: 400px;
+  font-family: "Alice", serif;
+}
+
+input {
+  min-width: none;
+  width: 100%;
+  border-radius: 20px;
+  height: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.101);
+  outline: none;
+  border: 1px solid rgba(63, 63, 63, 0.575);
+  color: white;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Alice", serif;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 20px;
+  height: 80px;
+  padding-left: 20px;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.101);
+  outline: none;
+  border: 1px solid rgba(63, 63, 63, 0.575);
+  color: white;
+  resize: none;
+  font-family: "Alice", serif;
+}
+
+textarea::placeholder {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: none;
+  width: 100%;
+  border-radius: 20px;
+  height: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.101);
+  outline: none;
+  border: 1px solid rgba(63, 63, 63, 0.575);
+  color: white;
+  cursor: pointer;
+}
+
+form button:hover {
+  filter: brightness(70%);
 }

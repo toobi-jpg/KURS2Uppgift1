@@ -7,15 +7,23 @@ window.addEventListener("scroll", () => {
   if (scroll >= 150) {
     nav.style.transition = "opacity 0.2s ease";
     nav.style.opacity = "0";
+    nav.style.backgroundColor = "#00000095";
+    setTimeout(() => {
+      nav.style.display = "none";
+    }, 200);
   }
 
   if (scrollPrev > scroll) {
     nav.style.transition = "opacity 0.2s ease";
     nav.style.opacity = "1";
+    setTimeout(() => {
+      nav.style.display = "flex";
+    }, 200);
   }
 
   if (scroll <= 290) {
     nav.style.marginTop = "50px";
+    nav.style.backgroundColor = "transparent";
   } else {
     nav.style.marginTop = "0";
   }
@@ -79,3 +87,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 //......................................................................
+//Buffé / Al la carte selekt logik .....................................
+const buffetSelect = document.getElementById("buffet-select");
+const carteSelect = document.getElementById("carte-select");
+const carteContainer = document.getElementById("carte-container");
+const buffetContainer = document.getElementById("buffet-container");
+
+buffetSelect.addEventListener("click", () => {
+  carteSelect.classList.add("apply-shadow-inverse");
+  buffetSelect.classList.remove("apply-shadow");
+  carteContainer.classList.add("hide-container");
+  buffetContainer.classList.remove("hide-container");
+});
+
+carteSelect.addEventListener("click", () => {
+  carteSelect.classList.remove("apply-shadow-inverse");
+  buffetSelect.classList.add("apply-shadow");
+  carteContainer.classList.remove("hide-container");
+  buffetContainer.classList.add("hide-container");
+});
