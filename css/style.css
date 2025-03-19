@@ -192,12 +192,24 @@ section {
 
 .section-content {
   position: relative;
-  width: 100%;
+  min-width: 50%;
+  min-height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 2;
+}
+
+.mountains-png {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/9121424.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  filter: grayscale(100%);
 }
 
 .section-text {
@@ -214,31 +226,89 @@ section h1 {
 }
 
 .section-text hr {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 50px;
   justify-self: center;
+  opacity: 50%;
 }
 
-.about-text {
+.history-text {
   word-break: break-word;
   line-height: 1.6rem;
   font-size: 18px;
   margin: 0 20px;
+  max-width: 90%;
+}
+
+.about-text p {
+  word-break: break-word;
+  line-height: 1.6rem;
+  font-size: 18px;
+  margin: 20px 20px;
+}
+
+.awards-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.awards-container img {
+  max-height: 120px;
+}
+
+@media (max-width: 1374px) {
+  .about-text p {
+    font-size: 16px;
+    margin: 10px 20px;
+  }
+}
+
+@media (max-width: 999px) {
+  #history-section {
+    flex-direction: column;
+    min-height: 1000px;
+    justify-content: center;
+    align-items: center;
+  }
+  .section-content {
+    width: 100%;
+  }
+  .awards-container img {
+    max-height: 80px;
+  }
 }
 
 @media (max-width: 636px) {
   section h1 {
     font-size: 42px;
   }
-  .about-text {
-    font-size: 16px;
+  .about-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 465px) {
+  .awards-container img {
+    max-height: 50px;
+  }
+  .about-text p {
+    text-align: left;
+    margin: 0 10px;
+  }
+}
+@media (max-width: 365px) {
+  .awards-container {
+    margin-bottom: 5px;
   }
 }
 
 @media (max-width: 355px) {
   section h1 {
-    font-size: 38px;
+    font-size: 34px;
   }
   .about-text {
     font-size: 14px;
@@ -249,7 +319,7 @@ section h1 {
   display: flex;
   align-items: center;
   position: relative;
-  min-height: 850px;
+  min-height: 900px;
   height: 100vh;
   overflow: hidden;
 }
@@ -263,6 +333,7 @@ section h1 {
   display: flex;
   min-width: 325px;
   width: 600px;
+  max-height: 850px;
   height: 90%;
   margin: 0 10px;
   z-index: 2;
@@ -442,6 +513,7 @@ section h1 {
 .buffet-price {
   font-weight: bold;
   font-size: 18px;
+  transform: translateY(-1px);
 }
 
 .buffet-menu {
@@ -544,6 +616,7 @@ section h1 {
   backdrop-filter: blur(4px);
   z-index: 1;
   padding: 20px;
+  margin: 0 10px;
 }
 
 .contact-container h2 {
@@ -557,7 +630,7 @@ form {
   flex-direction: column;
   gap: 15px;
   min-width: 300px;
-  width: 400px;
+  width: 50%;
   font-family: "Alice", serif;
 }
 
@@ -616,4 +689,79 @@ form button {
 
 form button:hover {
   filter: brightness(70%);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: #0b0b0b;
+  color: white;
+  flex-shrink: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.site-by {
+  margin-top: 10px;
+  font-size: 10px;
+  font-style: italic;
+  text-align: right;
+}
+
+.footer-text {
+  font-size: 12px;
+  position: absolute;
+  right: 50px;
+  text-align: right;
+}
+
+.wine-png {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.6);
+  background-image: url("../images/wine.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.desserts-png {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+  background-image: url("../images/desserts.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.starters-png {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+  background-image: url("../images/starters.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
 }
