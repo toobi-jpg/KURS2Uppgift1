@@ -56,14 +56,15 @@ header {
   color: white;
   text-transform: uppercase;
   font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
 header a:hover {
-  text-shadow: 0px 0px 4px white;
-  transform: scale(110%);
+  filter: brightness(80%);
 }
 
-@media (max-width: 649px) {
+@media (max-width: 674px) {
   header {
     gap: 30px;
   }
@@ -110,6 +111,41 @@ header a:hover {
   opacity: 80%;
 }
 
+#mobile-nav-menu {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  height: 40%;
+  z-index: 999;
+  background-color: #00000095;
+}
+
+.show-mobile-nav {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+#mobile-nav-menu nav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+#mobile-nav-menu nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 32px;
+}
+
 .main-section-container {
   position: relative;
   display: flex;
@@ -134,11 +170,49 @@ header a:hover {
 .main-setion-text h1 {
   font-weight: 300;
   font-size: 48px;
+  letter-spacing: 5px;
 }
 
 .main-setion-text h2 {
   font-weight: 300;
   font-style: italic;
+}
+
+#reservation-button {
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+
+#table-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#reservation-button:hover {
+  filter: brightness(80%);
+}
+
+.table-icon-animation {
+  opacity: 1;
+  animation: swing-in 0.3s ease-in forwards;
+}
+
+@keyframes swing-in {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 #dining-room {
@@ -326,7 +400,7 @@ section h1 {
 
 #menu-container {
   position: relative;
-  background-image: url("../images/paper-texture.jpg");
+  background-image: url("../images/watercolor-paper-texture.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -352,7 +426,7 @@ section h1 {
   width: 100px;
   height: 30px;
   border: none;
-  background-image: url(../images/paper-texture.jpg);
+  background-image: url(../images/watercolor-paper-texture.png);
   top: -30px;
   cursor: pointer;
 }
@@ -371,12 +445,12 @@ section h1 {
 
 .apply-shadow {
   box-shadow: inset 4px -2px 6px rgba(0, 0, 0, 0.304);
-  filter: brightness(90%);
+  filter: brightness(80%);
 }
 
 .apply-shadow-inverse {
   box-shadow: inset -4px -2px 6px rgba(0, 0, 0, 0.304);
-  filter: brightness(90%);
+  filter: brightness(80%);
 }
 
 .allergies-text {
@@ -764,4 +838,40 @@ footer a {
   opacity: 0.1;
   z-index: 0;
   pointer-events: none;
+}
+
+.menu-checkbox {
+  position: absolute;
+  right: 15px;
+  margin-top: 20px;
+  width: 17px;
+  cursor: pointer;
+}
+
+#order-mode-container {
+  z-index: 999;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  width: 100px;
+  height: 30px;
+  background-image: url(../images/watercolor-paper-texture.png);
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#order-total-text {
+  font-weight: 500;
+}
+
+#oder-total {
+  font-weight: 600;
+}
+
+.hide-order-shadow {
+  box-shadow: inset 0px -4px 6px rgba(0, 0, 0, 0.304);
+  filter: brightness(80%);
 }
