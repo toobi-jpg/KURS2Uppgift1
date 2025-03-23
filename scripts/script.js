@@ -133,7 +133,7 @@ reservationButton.addEventListener("mouseout", () => {
 });
 //......................................................................
 //Order total logik ....................................................
-//Kom på i efterhand att kunden kanske vill lägga till flera av samma rätt Hade använt input number istället och sedan multiplicerat mängd med priset.
+//Kom på i efterhand att kunden kanske vill lägga till flera av samma rätt Hade använt input number istället för att hantera kvantitet samt lagt till styling för bästllning med produkt namnen, tror jag la ner lite för mycket tid på meny katogori funktionerna samt styling.
 const orderTotalText = document.getElementById("order-total");
 const menuCheckbox = document.querySelectorAll(".menu-checkbox");
 
